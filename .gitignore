@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# HuggingFace / model cache
+.cache/
+**/.cache/
+
+# Vector stores (can be regenerated)
+faiss_index/
