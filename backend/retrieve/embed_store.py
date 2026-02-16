@@ -2,8 +2,12 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from backend.ingest.load_docs import load_documents
+import os
 
-docs = load_documents("data/docs/DReam-VL.pdf")
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DOCS_DIR = os.path.join(ROOT_DIR, "data", "docs")
+
+docs = load_documents(DOCS_DIR)
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
